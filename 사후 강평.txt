@@ -1,0 +1,8 @@
+JList 사용: 표절로 간주
+GUI 액션은 Panel에서 수행
+
+GUI와 data의 분리? -> Panel? Button? -> OrderList와 OrderListPanel은 독립적이지만 하나로 엮여있어야 함
+Button을 별도의 class로 분리할 필요가 있는가? -> actionListener로 하나의 class에 담을 수 있음
+
+OrderList와 OrderListPanel의 분리?
+static 사용하지 말 것

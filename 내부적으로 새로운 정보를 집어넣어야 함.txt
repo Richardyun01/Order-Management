@@ -1,0 +1,40 @@
+내부적으로 새로운 정보를 집어넣어야 함
+sort by ~: date 또는 customer로 toggle함
+change: 주문을 먼저 선택한 다음 눌러야 함/선택이 안된 상태에서 누르면 무시/바꿀 시 status와 address를 수정select가 여러 개가 되면 안됨
+JPanel은 select 기능이 없음
+JPanel은 ActionListener를 add할 수 없음->MouseListener/MouseAdapter를 사용
+디버깅 할것
+
+명시를 자동적으로 되게 함
+각 panel의 class화/구조 나누기
+class 초기화할 때 연동할 객체들의 포인터를 넘기면 됨
+화면 refresh하기: repaint/revalidate 등 사용
+선택 동작: MouseListener/MouseAdapter를 사용
+
+class간의 관계
+Order<->OrderPanel
+OrderList<->OrderListPanel
+reference variable 사용 및 전달
+
+anonymous inner class listener 사용
+outer class의 변수/메소드 사용
+this 사용
+
+가장 중요한 code 부분: 변수 선언+생성자
+private _orderbutton
+public OrderPanel() {}
+
+public class OrderListPanel extends JPanel {
+	private OrderList orderList;
+
+	private ArrayList<OrderPanel> orderPanels = new ArrayList<OrderPanel>();
+	//모든 종류의 변수를 저장할 수 있기 때문에 ArrayList 사용
+
+	private final Border normalBorder = new LineBorder(Color.GRAY, 1, true);
+	private final Border highBorder = new LineBorder(Color.RED, 2, true);
+
+	OrderListPanel(OrderList oList) {
+		this.orderList = oList;
+		...
+	}
+}
